@@ -4,21 +4,29 @@
 
 # Prompting the user to enter a three digit positive number, named "value".
 
-value <- readline(promt = "Please enter a three digit positive number: ")
+user_input <- readline(prompt = "Please enter a three-digit, positive number: ")
 
-# Checking if the user input is numeric. If not, print an error message and quit.
-# Check if the user input is a narcissistic number.
-# Print appropriate message (if or if not) narcissistic number.
+# Checking if the user input is numeric, three digits, and positive. If not, print an error message and quit.
+# If the user input meets all three criteria, then can determine if input is narcissistic.
+# Print appropriate message if user input is a narcissistic number or not.
+# ASSUMPTION: 0 is not a positive number.
 
-if(is.numeric(as.numeric(value)) & # This is to check if value is numeric.
-   (as.numeric(value)) %% 1 == 0 & # This is to check if value is an integer.
-   nchar(as.character(value)) == 3 & # This is to check if value is a three-digit number.
-   as.numeric(value) > 0 { # This is to check if the value is a positive number.
-     value <- as.integer(value) # Ensures value is integer and not a character.
+if(is.numeric(as.numeric(user_input)) & # This is to check if user input is numeric.
+   (as.numeric(user_input)) %% 1 == 0 & # This is to check if user input is an integer.
+   nchar(as.character(user_input)) == 3 & # This is to check if user input is a three-digit number.
+   (as.numeric(user_input)) > 0) { # This is to check if the user input is a positive number.
+     value <- as.integer(user_input) # Ensure user input is integer and not a character.
 
+       splitdigits <- as.numeric(strsplit(user_input, "") [[1]]) # Splitting given user input into a list of values.
 
+       sum_of_cubes <- sum(splitdigits ^ 3) # Determining the sum of cubes of each digit of the user input after the user input is split into digits.
+                                            # For example, if user input is "153", each digit ("1", "5", "3") will be cubed and summed.
 
-
-
-# Check if the number is narcissistic.
-# Display the result with an appropriate message.
+       if((as.numeric(user_input)) == (sum_of_cubes)) { # Determining if sum_of_cubes is equal to user_input to see if it is a Narcissistic number.
+         print(paste(user_input, "is a Narcissistic number!"))
+       } else {
+         print(paste(user_input, "is not a Narcissistic number!"))
+       }
+     } else {
+       print(paste(user_input, "is an invalid entry. Entry must be a positive, three-digit number. Terminating..."))
+     }
