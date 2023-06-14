@@ -2,7 +2,7 @@
 
 # Link to public repo: https://github.com/SanariW/Assignment_2_Sanari_W..git
 
-# Prompting the user to enter a three digit positive number, named "value".
+# Prompting the user to enter a three digit positive number, named "user_input".
 
 user_input <- readline(prompt = "Please enter a three-digit, positive number: ")
 
