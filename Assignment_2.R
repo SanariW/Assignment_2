@@ -25,7 +25,7 @@ if(is.numeric(as.numeric(user_input)) & # This is to check if user input is nume
        if((as.numeric(user_input)) == (sum_of_cubes)) { # Determining if sum_of_cubes is equal to user_input to see if it is a Narcissistic number.
          print(paste(user_input, "is a Narcissistic number! Oh no, the number is a little self-centered!"))
        } else {
-         print(paste(user_input, "is not a Narcissistic number! Yay, the number is so emapthic!"))
+         print(paste(user_input, "is not a Narcissistic number! Yay, the number is so empathic!"))
        }
      } else {
        print(paste(user_input, "is an invalid entry. Entry must be a positive, three-digit number. Terminating..."))
