@@ -29,4 +29,5 @@ if(is.numeric(as.numeric(user_input)) & # This is to check if user input is nume
        }
      } else {
        print(paste(user_input, "is an invalid entry. Entry must be a positive, three-digit number. Terminating..."))
+       quit()
      }
